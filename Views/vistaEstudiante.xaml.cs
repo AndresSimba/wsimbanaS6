@@ -26,6 +26,6 @@ public partial class vistaEstudiante : ContentPage
     {
         InitializeComponent();
     }
-
+    https://github.com/ElvinSanchez/esanchezS6
    
 }
