@@ -3,26 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wsimbanaS6.Views.vistaEstudiante"
              Title="vistaEstudiante">
-    <VerticalStackLayout>
-        <Label 
-            Text="VISTA PRINCIPAL"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
 
-        <ListView x:Name="listaEstudiantes">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding codigo}"/>
-                            <Label Text="{Binding nombre}"/>
-                            <Label Text="{Binding apellido}"/>
-                            <Label Text="{Binding edad}"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        ✅ Resultado
-    </VerticalStackLayout>
+            <Label
+                Text="SEMANA 6"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                TextColor="Red"
+                FontSize="20"/>
+
+            <Image
+                Source="uisrael.jpg"
+                WidthRequest="250">
+            </Image>
+
+            <Label 
+                Text="ESTUDIANTE"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Código" FontAttributes="Bold"/>
+                <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold"/>
+                <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold"/>
+                <Label Grid.Column="3" Text="Edad" FontAttributes="Bold"/>
+            </Grid>
+
+            <ListView x:Name="lvEstudiante"
+                      ItemTapped="lvEstudiante_ItemTapped"
+                      SelectionMode="Single"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding codigo}"/>
+                                    <Label Grid.Column="1" Text="{Binding nombre}"/>
+                                    <Label Grid.Column="2" Text="{Binding apellido}"/>
+                                    <Label Grid.Column="3" Text="{Binding edad}"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Aquí agregamos el botón -->
+            <Button 
+    x:Name="btnRegistroNuevo"
+    Text="Registro nuevo"
+    BackgroundColor="LightBlue"
+    TextColor="Black"
+    FontAttributes="Bold"
+    Clicked="btnRegistroNuevo_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

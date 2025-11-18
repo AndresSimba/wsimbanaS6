@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="wsimbanaS6.Views.vistaActElim"
+             Title="vistaActElim">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Código"/>
+            <!-- Código bloqueado para edición -->
+            <Entry x:Name="txtCodigo" IsEnabled="False"/>
+
+            <Label Text="Nombre"/>
+            <Entry x:Name="txtNombre" Placeholder="Ingrese nombre"/>
+
+            <Label Text="Apellido"/>
+            <Entry x:Name="txtApellido" Placeholder="Ingrese apellido"/>
+
+            <Label Text="Edad"/>
+            <Entry x:Name="txtEdad" Placeholder="Ingrese edad" Keyboard="Numeric"/>
+
+            <HorizontalStackLayout Spacing="20">
+                <Button Text="Actualizar"
+                        BackgroundColor="LightGreen"
+                        TextColor="Black"
+                        Clicked="OnActualizarClicked"/>
+
+                <Button Text="Eliminar"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        Clicked="OnEliminarClicked"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
